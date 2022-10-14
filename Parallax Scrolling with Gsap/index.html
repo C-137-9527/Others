@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Scrolling with Gsap</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        font-family: sans-serif;
+      }
+
+      .parallax {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+      }
+      #text {
+        position: absolute;
+        translate: 0 100%;
+        font-size: 4rem;
+        color: #112434;
+      }
+      .description {
+        position: relative;
+        padding: 100px;
+        background-color: #112434;
+      }
+      .description h2 {
+        color: #fff;
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+      .description p {
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="parallax">
+        <h2 id="text">Parallax Scrolling</h2>
+        <img src="./assets/monutain_01.png" id="m1" />
+        <img src="./assets/trees_02.png" id="t2" />
+        <img src="./assets/monutain_02.png" id="m2" />
+        <img src="./assets/trees_01.png" id="t1" />
+        <img src="./assets/man.png" id="man" />
+        <img src="./assets/plants.png" id="plants" />
+      </section>
+      <section class="description">
+        <h2>Parallax Scrolling Website</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
+          pariatur quidem reprehenderit corrupti consectetur, alias facilis
+          saepe voluptatum autem tempore aspernatur modi molestias quaerat
+          distinctio nulla quasi eligendi id blanditiis. Placeat ratione odit
+          accusantium corporis labore alias, repellat, expedita autem quasi
+          nulla dolorum reprehenderit voluptate quisquam ab odio ex, sequi atque
+          facilis magnam! Consectetur repudiandae qui eaque, reiciendis
+          consequatur culpa quibusdam quo consequuntur, impedit, voluptatibus
+          commodi eligendi tempora sunt quidem est similique mollitia porro
+          totam temporibus! Delectus porro tempora illo obcaecati cumque amet
+          commodi, minima nisi impedit sunt dolorem ratione sed veniam corrupti.
+          Amet laboriosam error mollitia beatae obcaecati asperiores?
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
+          tempora blanditiis? Quas possimus pariatur alias consequatur ad
+          consectetur suscipit nesciunt in, labore assumenda, quaerat ipsa nam
+          nostrum eveniet. Quasi laudantium laborum amet hic adipisci magnam,
+          qui nostrum itaque porro officiis saepe ea ratione nam quisquam
+          reiciendis, iure maiores dicta aut? Iusto, ea ratione? Maxime
+          assumenda quam at atque laudantium facilis laborum molestiae modi qui,
+          commodi natus a repellendus, aliquid incidunt numquam, saepe dicta
+          fugit delectus deleniti ea pariatur? Fugiat fuga placeat quis a,
+          laboriosam recusandae impedit accusamus distinctio molestiae delectus
+          minus ullam. Deserunt quis ducimus cum debitis, saepe ipsa error.
+        </p>
+      </section>
+    </main>
+
+    <!-- gsap scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <!-- js -->
+    <script>
+      gsap.from('#m1', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        y: 100,
+      });
+      gsap.from('#m2', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        y: 50,
+      });
+      gsap.from('#t2', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        y: 50,
+      });
+      gsap.from('#t1', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        y: 50,
+      });
+      gsap.from('#man', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        x: -250,
+      });
+      gsap.from('#plants', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        x: -250,
+      });
+      gsap.from('#text', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        x: 300,
+      });
+    </script>
+  </body>
+</html>
